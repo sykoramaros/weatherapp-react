@@ -4,17 +4,9 @@ const Footer = () => {
   return (
     <div className="pt-5">
       <footer className="bg-success text-white text-center py-3">
-        <div className="ontainer">
+        <div className="container">
           <p>&copy; 2024 Your Company. All rights reserved.</p>
-          <p>
-            <a href="#" className="text-white">
-              Privacy Policy
-            </a>{" "}
-            |
-            <a href="#" className="text-white">
-              Terms of Service
-            </a>
-          </p>
+          <span className="text-white">Privacy Policy | Terms of Service</span>
         </div>
       </footer>
     </div>

@@ -21,15 +21,16 @@ const Weather = () => {
     fetchWeather()
   }, [location])
 
-
   useEffect(() => {
     // Inicializace popoverů
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    )
     popoverTriggerList.forEach((popoverTriggerEl) => {
       new Popover(popoverTriggerEl)
     })
   }, [])
-  
+
   return (
     <div className="container mt-4">
       <button
@@ -51,10 +52,9 @@ const Weather = () => {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-
       </div>
       {weatherData && (
-        <div className="text-center">
+        <div className="text-center mt-4">
           <h2 className="display-4">
             Weather for:
             <br />
