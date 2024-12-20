@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getWeather } from "../../Services/WeatherService/GetWeather"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -14,6 +13,7 @@ const Weather = () => {
       try {
         const data = await getWeather(location)
         setWeatherData(data)
+        console.log(data)
       } catch (error) {
         console.error("Error fetching weather data:", error)
       }
@@ -61,6 +61,11 @@ const Weather = () => {
             <span className="fw-bold">{location}</span>
           </h2>
           <hr className="w-25 mx-auto" />
+          <img
+            className="img-fluid bg-transparent"
+            style={{ width: "250px" }}
+            src={"https:" + weatherData.icon}
+          />
           <h3 className="display-5 fw-bold">
             {weatherData.weatherDescription}
           </h3>
@@ -69,7 +74,7 @@ const Weather = () => {
             <p>
               Temperature:
               <br />
-              <span className="fs-2 fw-bold">{weatherData.temp_celsius}°C</span>
+              <span className="fs-2 fw-bold" >{weatherData.temp_celsius}°C</span>
             </p>
             <p>
               Humidity:
