@@ -85,7 +85,7 @@ const Weather = () => {
               Wind speed:
               <br />
               <span className="fs-2 fw-bold">
-                {weatherData.windSpeed_mps} km/h
+                {Math.round(weatherData.windSpeed_mps * 100) / 100} km/h
               </span>
             </p>
             <p>
