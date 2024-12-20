@@ -85,7 +85,7 @@ const Weather = () => {
               Wind speed:
               <br />
               <span className="fs-2 fw-bold">
-                {weatherData.windSpeed_mps} km/h
+                {parseFloat(weatherData.windSpeed_mps.toFixed(2))} km/h
               </span>
             </p>
             <p>
